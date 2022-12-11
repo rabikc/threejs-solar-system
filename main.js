@@ -29,13 +29,13 @@ controls.maxPolarAngle = Math.PI / 2;
 
 const light = new THREE.PointLight(0xffffff, 5, 500);
 
-const sceneBG = new THREE.TextureLoader().load("/space.jpg");
+const sceneBG = new THREE.TextureLoader().load("space.jpg");
 
 scene.background = sceneBG;
 
 const sunSphere = new THREE.SphereGeometry(32, 40, 40);
 const sunMat = new THREE.MeshBasicMaterial({
-  map: new THREE.TextureLoader().load("/sun3000.jpg"),
+  map: new THREE.TextureLoader().load("sun3000.jpg"),
 });
 
 const sun = new THREE.Mesh(sunSphere, sunMat);
@@ -71,25 +71,25 @@ function createPlanet(size, texture, position, ring) {
   return { planet, planetWrap };
 }
 
-const mercury = createPlanet(
-  3,
-  new THREE.TextureLoader().load("/mercury.png"),
-  { x: 0, y: 0, z: 45 }
-);
+const mercury = createPlanet(3, new THREE.TextureLoader().load("mercury.png"), {
+  x: 0,
+  y: 0,
+  z: 45,
+});
 
-const venus = createPlanet(3, new THREE.TextureLoader().load("/venus.jpg"), {
+const venus = createPlanet(3, new THREE.TextureLoader().load("venus.jpg"), {
   x: 65,
   y: 0,
   z: -65,
 });
 
-const earth = createPlanet(5, new THREE.TextureLoader().load("/earth.jpg"), {
+const earth = createPlanet(5, new THREE.TextureLoader().load("earth.jpg"), {
   x: -90,
   y: 0,
   z: 90,
 });
 
-const mars = createPlanet(4, new THREE.TextureLoader().load("/mars.jpg"), {
+const mars = createPlanet(4, new THREE.TextureLoader().load("mars.jpg"), {
   x: 120,
   y: 0,
   z: 120,
@@ -97,36 +97,36 @@ const mars = createPlanet(4, new THREE.TextureLoader().load("/mars.jpg"), {
 
 const jupiter = createPlanet(
   10,
-  new THREE.TextureLoader().load("/jupiter.jpg"),
+  new THREE.TextureLoader().load("jupiter.jpg"),
   { x: -200, y: 0, z: -200 }
 );
 
 const saturn = createPlanet(
   8.5,
-  new THREE.TextureLoader().load("/saturn.jpg"),
+  new THREE.TextureLoader().load("saturn.jpg"),
   { x: 0, y: 0, z: 230 },
   {
     innerRadius: 9,
     outerRadius: 15,
-    texture: new THREE.TextureLoader().load("/saturn-ring.png"),
+    texture: new THREE.TextureLoader().load("saturn-ring.png"),
   }
 );
 
 const uranus = createPlanet(
   8,
-  new THREE.TextureLoader().load("/uranus.jpg"),
+  new THREE.TextureLoader().load("uranus.jpg"),
   { x: 260, y: 0, z: -100 },
   {
     innerRadius: 8,
     outerRadius: 15,
-    texture: new THREE.TextureLoader().load("/uranus-ring.png"),
+    texture: new THREE.TextureLoader().load("uranus-ring.png"),
   }
 );
-const neptune = createPlanet(
-  8,
-  new THREE.TextureLoader().load("/neptune.jpg"),
-  { x: 300, y: 0, z: 100 }
-);
+const neptune = createPlanet(8, new THREE.TextureLoader().load("neptune.jpg"), {
+  x: 300,
+  y: 0,
+  z: 100,
+});
 
 function animate() {
   requestAnimationFrame(animate);
